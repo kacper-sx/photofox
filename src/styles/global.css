@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+
+
+@theme {
+
+  --font-sans: 'Arial', 'sans-serif';
+  --color-bbrand-50: oklch(25.62% 0 0);
+  --color-bbrand-100: oklch(68.15% 0.213459 39.9549);
+  --color-bbrand-200: oklch(21.01% 0.0318 264.66);
+  --color-bbrand-300: oklch(35.2% 0.2422 264.75);
+  --color-bbrand-400: oklch(48.73% 0.155 271.98);
+  --color-bbrand-500: oklch(36.8% 0.159 271.74);
+  --color-bbrand-600: oklch(33.69% 0.183 271.8);
+  --color-bbrand-700: oklch(29.4% 0.19 271.82);
+  --color-bbrand-800: oklch(24.94% 0.161 271.97);
+  --color-bbrand-900: oklch(21.04% 0.136 271.35);
+
+  --color-primary: oklch(0.7133 0.1515 60.99);
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(1 0 230);
+  --color-secondary: oklch(0.84 0.1376 213.37);
+  --color-border: oklch(33.68% 0 0);
+  --color-accent: oklch(0.3041 0.051 70.52);
+
+
+
+}
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@utility mx-spaced {
+  @apply mx-4 md:mx-8 lg:mx-12;
+}
+
+@utility gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-l from-bbrand-100 to-accent;
+}
+
+
+@utility px-spaced {
+  @apply px-4 md:px-12 lg:px-20;
+}
+
+.double-brand-clip {
+  clip-path: polygon(100% 0%, 100% 53%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.sour-gummy-text {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Przykład: waga normalna */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.sour-gummy-semibold {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600; /* Przykład: waga pogrubiona */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.varela-round-regular {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card-gradient {
+  background: hsla(335, 91%, 70%, 1);
+  background: linear-gradient(135deg, hsla(335, 91%, 70%, 1) 15%, hsla(49, 89%, 61%, 1) 100%);
+}
+
+@layer base {
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    display: flex;
+    
+    flex-direction: column;
+  }
+  section {
+    scroll-margin: 120px;
+  }
+}
