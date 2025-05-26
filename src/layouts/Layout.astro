@@ -1,11 +1,23 @@
 ---
 import '@/styles/global.css'
 import AppHeader from '@/components/AppHeader.astro'
+
+export interface Props {
+  title: string
+  description: string
+  cannonical?: string
+  keywords: string
+}
+
+const { title, description, cannonical, keywords } = Astro.props as Props
 ---
 
 <!doctype html>
 <html lang='pl'>
   <head>
+    <script
+      src='https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js'
+      defer></script>
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
@@ -25,74 +37,66 @@ import AppHeader from '@/components/AppHeader.astro'
 
     <meta name='robots' content='index, follow' />
     <meta name='generator' content={Astro.generator} />
-    <link rel='canonical' href={'https://wasilukfoto.pl'} />
-    <title>Fotograf i kamerzysta ślubny | Biała Podlaska</title>
-    <meta
-      name='description'
-      content={'Nazywam się Tomasz Wasiluk i jako fotograf ślubny w Białej Podlaskiej uwieczniam ślub na zdjęciach i wideo. Zapraszam do zapoznania się z moją ofertą.'}
-    />
-    <meta name='keywords' content={'Fotografia i film ślubny Biała Podlaska'} />
+    <link rel='canonical' href={cannonical} />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <meta name='keywords' content={keywords} />
     <meta property='og:type' content='website' />
 
     <meta
       property='og:title'
-      content={'Fotografia i film ślubny | Tomasz Wasiluk Biała Podlaska'}
+      content={'Fototograf okolicznościowy Puchaczów - Robert Lis'}
     />
     <meta
       property='og:description'
-      content={'Nazywam się Tomasz Wasiluk i oferuję w Białej Podlaskiej usługi takie jak fotografi i film ślubny. Zapraszam do zapoznania się z portfolio i ofertą.'}
+      content={'Doświadczony fotograf okolicznościowy z Puchaczowa - śluby, chrzciny i komunie.'}
     />
-    <meta property='og:url' content={'https://wasilukfoto.pl'} />
-    <meta property='og:image' content={'https://wasilukfoto.pl/og-image.png'} />
+    <meta property='og:url' content={'https://photofox.pl'} />
+    <meta property='og:image' content={'https://photofox.pl/og-image.png'} />
     <meta property='og:locale' content={'pl'} />
 
-    <meta name='DC.identifier' content='https://wasilukfoto.pl' />
+    <meta name='DC.identifier' content='https://photofox.pl' />
     <meta name='DC.creator' content='Kacper Saweczko' />
     <meta name='DC.language' content='pl' />
     <meta name='DC.type' content='website' />
     <meta name='DC.format' content='text/html' />
-    <meta name='DC.rights' content='Tomasz Wasiluk fotografia' />
+    <meta name='DC.rights' content='Photofox Robert Lis' />
     <meta
       name='DC.subject'
-      content={'Nazywam się Tomasz Wasiluk i oferuję w Białej Podlaskiej usługi takie jak fotografi i film ślubny. Zapraszam do zapoznania się z portfolio i ofertą.'}
+      content={'Forografia ślubna, fotografia na chrzest i komunię świętą. Doświadczony fotograf Robert Lis.'}
     />
     <script is:inline type='application/ld+json'>
       {
         "@context": "https://schema.org",
         "@type": "LegalService",
-        "name": "Tomasz Wasiluk fotografia i wideo",
-        "image": "https://wasilukfoto.pl/favicon.svg",
-        "@id": "https://wasilukfoto.pl",
-        "url": "https://wasilukfoto.pl",
-        "telephone": "+48 885 900 090",
+        "name": "Photofox Robert Lis",
+        "image": "https://photofox.pl/logo.ico",
+        "@id": "https://photofox.pl",
+        "url": "https://photofox.pl",
+        "telephone": "+48 504 450 671",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Nowy Sławacinek 15a",
-          "addressLocality": "Nowy Sławacinek",
+          "streetAddress": "ul. Robotnicza 38",
+          "addressLocality": "Puchaczów",
           "postalCode": "21-500",
           "addressCountry": "PL"
         },
+
         "founder": {
           "@type": "Person",
-          "name": "Tomasz Wasiluk"
+          "name": "Robert Lis"
         },
-        "identifier": [
-          {
-            "@type": "PropertyValue",
-            "propertyID": "NIP",
-            "value": "5372527611"
-          }
-        ],
-        "description": "Tomasz Wasiluk fotografia i wideo",
-        "email": "tomaszwasilukpoczta@gmail.com"
+
+        "description": "Fotograf okolicznościowy - fotografia ślubna, fotografia chrztu i pierwszej komunii świętej.",
+        "email": "kontakt@photofox.pl"
       }
     </script>
   </head>
-  <body class='overflow-x-hidden flex flex-col'>
+  <body>
     <AppHeader />
-
-    <slot />
-
+    <main>
+      <slot />
+    </main>
     <!-- <AppFooter /> -->
   </body>
 </html>
