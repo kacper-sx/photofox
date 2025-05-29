@@ -1,11 +1,10 @@
 ---
 import { getImage } from 'astro:assets'
-import myBackground from '@/assets/mlodzi.avif'
+import myBackground from '@/assets/chrzest.avif'
 import { Icon } from 'astro-icon/components'
 
 const optimizedBackground = await getImage({
   src: myBackground,
-  quality: 80,
   loading: 'eager',
   format: 'avif',
 })
@@ -13,22 +12,23 @@ const optimizedBackground = await getImage({
 
 <section
   class='flex relative w-full bg-cover min-h-screen items-center justify-center'
-  style={`background-image: url(${optimizedBackground.src}); background-position: center 40%;`}
+  style={`background-image: url(${optimizedBackground.src}); background-position: center 1%;`}
 >
+  <div class='absolute inset-0 bg-black/30'></div>
   <div class='flex flex-col items-center p-4 backdrop-blur-sm xl:mt-16 gap-4'>
-    <h1 class='text-sm font-semibold'>Fotograf okolicznościowy Puchaczów</h1>
+    <h1 class='text-sm font-semibold'>Fotograf na chrzest Puchaczów</h1>
     <p
       class='sour-gummy-semibold text-4xl xl:text-[96px] tracking-wide text-center text-primary'
     >
-      Emocje i uczucia w kadrze
+      Fotografia z Chrztu
     </p>
     <p class='text-lg lg:text-xl font-medium max-w-5xl text-center'>
-      Sekretem fotografii jest uchwycenie chwili w idealny sposób, co pozwala na
-      długie i radosne wspominanie utrwalonych momentów. To szczególnie ważne w
-      fotografii okolicznościowej, gdzie zapisane obrazy stają się bezcenną
-      pamiątką ważnych wydarzeń, takich jak śluby, chrzciny czy jubileusze.
-      Dzięki nim możemy raz za razem wracać do tych wyjątkowych emocji i
-      wspomnień.
+      Fotografia z chrztu to cenna pamiątka jednego z pierwszych i
+      najważniejszych dni w życiu dziecka. To niepowtarzalna okazja, by
+      uwiecznić wzruszające chwile, obecność najbliższych oraz wyjątkowy
+      charakter sakramentu. Profesjonalne zdjęcia pozwalają zachować wspomnienia
+      rodzinnej atmosfery, gestów pełnych czułości i symboliki tego duchowego
+      wydarzenia, do których będzie można wracać przez całe życie.
     </p>
     <div
       class='flex mt-6 flex-col md:flex-row gap-4 text-xl xl:text-2xl w-full justify-center items-center sour-gummy-semibold'
