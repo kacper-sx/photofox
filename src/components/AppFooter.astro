@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets'
+import P1 from '@/assets/logo.png'
+import { menuMain } from '@/data/menus'
+---
+
+<footer
+  class='flex relative flex-col px-spaced bg-white text-accent pt-8 w-full overflow-hidden'
+>
+  <div
+    id='ellipse'
+    class='absolute w-full h-2/4 lg:h-3/4 top-2/4 lg:bottom-1/8 left-0 z-0 rotate-180'
+  >
+  </div>
+  <div
+    class='flex flex-col gap-8 lg:items-center lg:flex-row justify-between lg:*:flex-1 sour-gummy-semibold pb-8 border-b border-accent/40'
+  >
+    <div class='flex flex-col gap-4 items-start z-10'>
+      <p class='flex'>r.lis@puchaczow.lubelskie.pl</p>
+      <p class='flex'>+48 603 086 198</p>
+    </div>
+    <div class='flex items-center !flex-[3]'>
+      <a href='/' class='z-10 mx-auto'>
+        <Image
+          src={P1}
+          alt='Logo'
+          class='flex w-full max-w-[150px] md:max-w-sm object-cover'
+          format='webp'
+        />
+      </a>
+    </div>
+    <div class='flex flex-col gap-4 items-end z-10'>
+      {
+        menuMain.map((item) => (
+          <a href={item.url} class='text-lg rounded-full font-semibold '>
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+  <div class='flex flex-col py-4 flex-wrap gap-4 lg:grid lg:grid-cols-3 z-10'>
+    <p>Copyright &copy; {new Date().getFullYear()} Photofox Robert Lis</p>
+
+    <a class='place-self-center' href='/polityka'>Polityka prywatnosci</a>
+
+    <p class='place-self-end'>
+      Realizacja -
+      <a
+        class='underline underline-offset-3 font-semibold'
+        href='https://kacper-saw-portfolio.pages.dev'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        kacper-sx</a
+      >
+    </p>
+  </div>
+</footer>
+
+<style>
+  #ellipse {
+    background: conic-gradient(
+      from 187.31deg at 53.06% 26.16%,
+      #e58929 -20.13deg,
+      #3f2a0f 15.67deg,
+      rgba(255, 33, 246, 0) 122.88deg,
+      rgba(125, 35, 240, 0) 273.47deg,
+      #e58929 229.87deg,
+      #3f2a0f 375.67deg
+    );
+    filter: blur(80px);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+</style>

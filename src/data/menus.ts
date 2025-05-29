@@ -11,5 +11,10 @@ export const menuMain = [
 		name: "Fotografia komunijna",
 		url: "/rekuperacja",
 	},
+  {
+		name: "Kontakt",
+		url: "/kontakt",
+	},
+
 	
 ];

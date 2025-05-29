@@ -5,6 +5,7 @@
 @theme {
 
   --font-sans: 'Arial', 'sans-serif';
+  --font-display: 'Ostrich Rounded', 'sans-serif';
   --color-bbrand-50: oklch(25.62% 0 0);
   --color-bbrand-100: oklch(68.15% 0.213459 39.9549);
   --color-bbrand-200: oklch(21.01% 0.0318 264.66);
@@ -17,7 +18,7 @@
   --color-bbrand-900: oklch(21.04% 0.136 271.35);
 
   --color-primary: oklch(0.7133 0.1515 60.99);
-  --color-background: oklch(100% 0 0);
+  --color-background: oklch(0.3041 0.051 70.52);
   --color-foreground: oklch(1 0 230);
   --color-secondary: oklch(0.84 0.1376 213.37);
   --color-border: oklch(33.68% 0 0);
@@ -91,6 +92,15 @@
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+}
+
+
+@font-face {
+  font-family: 'Ostrich Rounded';
+  src: url('/fonts/ostrich-rounded.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 .varela-round-regular {

@@ -32,10 +32,6 @@ const pathname = rmTrailingSlash(Astro.url.pathname)
             class='w-full max-w-[100px] lg:max-w-[150px] object-cover'
             format='webp'
           />
-          <span
-            class='uppercase font-bold text-[12px] text-accent tracking-wider xl:-mt-1.5'
-            >Robert Lis
-          </span>
         </a>
         <div class='flex xl:hidden'>
           <button
@@ -61,12 +57,12 @@ const pathname = rmTrailingSlash(Astro.url.pathname)
           </button>
         </div>
         <div class='max-xl:hidden absolute w-full inset-x-0'>
-          <div class='flex gap-x-6 justify-end xl:justify-center items-center'>
+          <div class='flex gap-x-3 justify-end xl:justify-center items-center'>
             {
               menuMain.map((item) => (
                 <a
                   href={item.url}
-                  class={`transition text-xl text-accent rounded-full font-semibold hover:bg-accent/20 px-4 py-2 ${pathname === item.url ? 'menu-item-active' : ''}`}
+                  class={`transition text-lg text-accent rounded-full font-semibold hover:bg-accent/20 px-4 py-2 ${pathname === item.url ? 'menu-item-active' : ''}`}
                 >
                   {item.name}
                 </a>
