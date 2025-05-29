@@ -1,15 +1,15 @@
 export const menuMain = [
 	{
 		name: "Fotografia ślubna",
-		url: "/klimatyzacja",
+		url: "/fotografia-slubna",
 	},
   {
 		name: "Fotografia chrzcielna",
-		url: "/kontakt",
+		url: "/fotografia-chrzcielna",
 	},
 	{
 		name: "Fotografia komunijna",
-		url: "/rekuperacja",
+		url: "/fotografia-komunijna",
 	},
   {
 		name: "Kontakt",
