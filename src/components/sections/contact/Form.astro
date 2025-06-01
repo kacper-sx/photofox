@@ -1,0 +1,154 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<section class='grid grid-cols-1 md:grid-cols-2 gap-12 py-8 xl:py-24 px-spaced'>
+  <p
+    class='flex p-5 bg-primary !text-background font-semibold text-2xl xl:text-3xl 2xl:text-5xl tracking-wide justify-center items-center text-center rounded-2xl'
+  >
+    Czekamy na wasz odzew!
+  </p>
+  <p
+    class='flex font-medium !text-background text-xl p-5 order-last md:order-none bg-white items-center text-center md:text-start rounded-2xl'
+  >
+    Wypełnij formularz lub skontakuj się z nami bezpośrednio telefonicznie aby
+    ustalić szczegóły współpracy. Sprawimy, że wspomnienia z uroczystości
+    zostaną uchwycone i zapamiętane.
+  </p>
+  <address
+    class='not-italic relative overflow-hidden order-first md:order-none text-background flex flex-col gap-6 text-xl shadow-xl font-semibold bg-white rounded-2xl p-6'
+  >
+    <div
+      id='ellipse'
+      class='absolute w-full h-3/4 lg:h-3/4 top-1/4 lg:bottom-1/8 left-0 z-0 rotate-45'
+    >
+    </div>
+    <div
+      id='ellipse'
+      class='absolute w-full h-3/4 lg:h-3/4 top-1/4 lg:bottom-1/8 left-0 z-0 -rotate-225'
+    >
+    </div>
+    <div class='flex z-10 flex-col lg:flex-row justify-between'>
+      <div class='flex flex-col gap-2 items-center justify-center'>
+        <Icon name='lucide:mail' class='size-8 lg:size-16' />
+        <a
+          class='text-base font-semibold'
+          href='mailto:r.lis@puchaczow.lubelskie.pl'
+          >r.lis@puchaczow.lubelskie.pl</a
+        >
+      </div>
+      <div class='flex flex-col gap-2 items-center justify-center'>
+        <Icon name='lucide:phone' class='size-8 lg:size-16' />
+        <a class='text-base font-semibold' href='tel:+48603086198'
+          >+48 603 086 198</a
+        >
+      </div>
+    </div>
+    <div class='flex w-full h-[1px] bg-background/80'></div>
+
+    <iframe
+      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.15170098579!2d23.11429551297263!3d52.00411357181345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47219100f176c9bd%3A0x336c07b1c518e699!2sRobotnicza%2038%2C%2021-500%20Bia%C5%82a%20Podlaska!5e0!3m2!1spl!2spl!4v1748248977627!5m2!1spl!2spl'
+      class='flex w-full h-full rounded-2xl z-10'
+      style='border:0;'
+      allowfullscreen=''
+      loading='lazy'
+      referrerpolicy='no-referrer-when-downgrade'></iframe>
+  </address>
+  <form
+    id='contact-form'
+    action=''
+    method='POST'
+    class='flex flex-col gap-6 bg-primary rounded-2xl p-8 w-full'
+  >
+    <div class='flex flex-col gap-1'>
+      <label>Imię i nazwisko</label>
+      <input
+        type='text'
+        name='from_name'
+        placeholder='Janusz Kowalski'
+        required
+        class='px-4 py-4 bg-background text-primary placeholder:text-primary/80 rounded-lg'
+      />
+    </div>
+    <div class='flex flex-col gap-1'>
+      <label>Rodzaj urczystości</label>
+      <div class='relative w-full'>
+        <select
+          name='select'
+          class='appearance-none w-full px-4 py-4 bg-background text-primary rounded-lg'
+        >
+          <option value='slub'>Ślub</option>
+          <option value='chrzest'>Chrzest święty</option>
+          <option value='wesele'>Pierwsza Komunia</option>
+        </select>
+        <!-- Własna strzałka -->
+        <div
+          class='pointer-events-none !text-primary absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='w-4 h-4'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M19 9l-7 7-7-7'></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class='flex flex-col gap-1'>
+      <label>Numer telefonu</label>
+      <input
+        type='tel'
+        name='phone'
+        placeholder='+48 123 456 789'
+        required
+        class='px-4 py-4 placeholder:text-primary/80 bg-background text-white rounded-lg focus:ring-bbrand-100'
+      />
+    </div>
+    <p class='text-sm text-background text-[var(--white-icon)]'>
+      Wysyłając formularz potwierdzasz, że znasz i akceptujesz <a
+        class='font-bold'
+        href='/polityka'>politykę prywatności.</a
+      >
+    </p>
+    <button
+      type='submit'
+      class='px-4 py-4 font-semibold bg-background text-primary rounded-lg transition-opacity hover:bg-secondary/80'
+    >
+      Wyśij wiadomość
+    </button>
+  </form>
+  <div
+    id='form-message'
+    class='hidden justify-center items-center mt-4 text-primary text-lg'
+  >
+    ✅ Thank you for your message!
+  </div>
+</section>
+
+<style>
+  label {
+    color: var(--color-background);
+  }
+</style>
+<style>
+  #ellipse {
+    background: conic-gradient(
+      from 187.31deg at 53.06% 26.16%,
+      #e58929 -20.13deg,
+      #3f2a0f 15.67deg,
+      rgba(255, 33, 246, 0) 122.88deg,
+      rgba(125, 35, 240, 0) 273.47deg,
+      #e58929 229.87deg,
+      #3f2a0f 375.67deg
+    );
+    filter: blur(80px);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+</style>
