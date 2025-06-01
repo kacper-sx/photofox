@@ -2,6 +2,7 @@
 import { getImage } from 'astro:assets'
 import myBackground from '@/assets/chrzest.avif'
 import { Icon } from 'astro-icon/components'
+import Breadcrumbs from '@/components/features/Breadcrumbs.astro'
 
 const optimizedBackground = await getImage({
   src: myBackground,
@@ -16,7 +17,15 @@ const optimizedBackground = await getImage({
 >
   <div class='absolute inset-0 bg-black/30'></div>
   <div class='flex flex-col items-center p-4 backdrop-blur-sm xl:mt-16 gap-4'>
-    <h1 class='text-sm font-semibold'>Fotograf na chrzest Puchaczów</h1>
+    <div class='flex flex-col gap-2 items-center'>
+      <Breadcrumbs
+        breadcrumbs={[
+          { href: '/', children: 'Photofox' },
+          { href: '/fotografia-chrzcielna', children: 'Fotografia chrztu' },
+        ]}
+      />
+      <h1 class='font-semibold'>Fotograf na chrzest Puchaczów</h1>
+    </div>
     <p
       class='sour-gummy-semibold text-4xl xl:text-[96px] tracking-wide text-center text-primary'
     >

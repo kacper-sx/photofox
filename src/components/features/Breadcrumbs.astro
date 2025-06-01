@@ -1,0 +1,47 @@
+---
+import {
+  type BreadcrumbEntry,
+  generateBreadcrumbsJSONLD,
+} from '@/lib/generateBreadcrumbsJSONLD'
+import { cn } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  breadcrumbs: BreadcrumbEntry[]
+}
+
+const { breadcrumbs } = Astro.props
+---
+
+<script
+  is:inline
+  type='application/ld+json'
+  set:html={generateBreadcrumbsJSONLD(breadcrumbs, Astro.site!)}
+/>
+
+<nav class={cn('not-prose')}>
+  <ul class='flex gap-1.5 text-sm'>
+    {
+      breadcrumbs.map(({ href, children }, idx, { length }) => (
+        <Fragment>
+          <li>
+            <a href={href}>{children}</a>
+          </li>
+          {idx < length - 1 && (
+            <li
+              class='flex items-center gap-1.5'
+              role='presentation'
+              aria-hidden='true'
+            >
+              <Icon
+                name='lucide:chevron-right'
+                aria-hidden='true'
+                class='size-4'
+              />
+            </li>
+          )}
+        </Fragment>
+      ))
+    }
+  </ul>
+</nav>

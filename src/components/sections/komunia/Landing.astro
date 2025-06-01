@@ -2,6 +2,7 @@
 import { getImage } from 'astro:assets'
 import myBackground from '@/assets/komunia.avif'
 import { Icon } from 'astro-icon/components'
+import Breadcrumbs from '@/components/features/Breadcrumbs.astro'
 
 const optimizedBackground = await getImage({
   src: myBackground,
@@ -16,12 +17,20 @@ const optimizedBackground = await getImage({
 >
   <div class='absolute inset-0 bg-black/30'></div>
   <div class='flex flex-col items-center p-4 backdrop-blur-sm xl:mt-16 gap-4'>
-    <h1 class='text-sm font-semibold'>Fotograf na komunię Puchaczów</h1>
-    <p
+    <div class='flex flex-col gap-2 items-center'>
+      <Breadcrumbs
+        breadcrumbs={[
+          { href: '/', children: 'Photofox' },
+          { href: '/fotografia-komunia', children: 'Fotografia komunijna' },
+        ]}
+      />
+      <h1 class='font-semibold'>Fotograf na komunię Puchaczów</h1>
+    </div>
+    <h2
       class='sour-gummy-semibold text-4xl xl:text-[96px] tracking-wide text-center text-primary'
     >
       Fotografia Komunijna
-    </p>
+    </h2>
     <p class='text-lg lg:text-xl font-medium max-w-5xl text-center'>
       Fotografia komunijna to nie tylko pamiątka, ale także wyjątkowy sposób na
       zatrzymanie w kadrze ważnego momentu w życiu dziecka i jego rodziny. To
