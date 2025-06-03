@@ -1,0 +1,85 @@
+---
+import background from '@/assets/background.svg'
+import P1 from '@/assets/fotograf-okolicznosciowy.avif'
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+import { number } from 'astro:schema'
+
+const colabData = [
+  {
+    href: '/fotografia-slubna',
+    number: 'I',
+    title: 'Fotograf na ślub',
+    desc: 'Fotografuję ceremonię kościelną oraz wesele. Dodatkowo mogę zrobić reportaż z przygotowania państwa młodych.',
+  },
+  {
+    href: '/fotografia-chrzcielna',
+    number: 'II',
+    title: 'Fotograf na chrzest',
+    desc: 'Uwieczniam wspaniałą uroczystość chrztu świętego. Robię zdjęcia zarówno w kościele jak i na ewentuanym przyjęciu rodzinnym.',
+  },
+  {
+    href: '/fotografia-komunijna',
+    number: 'III',
+    title: 'Fotograf na komunię',
+    desc: 'Zadbam o piękną oprawę pierwszej komunii świętej i będę tylko przy was. Skupię się tylko na Twoim dziecku i pokażę emocje panujące podczas tego ważnego dnia z perspektywy jego i Waszej rodziny.',
+  },
+]
+---
+
+<section
+  id='collaboration'
+  class='flex scroll-mt-[96px] flex-col gap-8 xl:gap-16 px-spaced py-8 xl:py-16 items-center justify-center w-full'
+>
+  <div class='flex flex-row gap-2 xl:gap-4 items-center'>
+    <h2
+      class='sour-gummy-semibold text-primary text-2xl xl:text-4xl text-center max-w-4xl'
+    >
+      Współpraca z fotografem Puchaczów
+    </h2>
+  </div>
+  <div
+    class='flex flex-col gap-8 xl:gap-0 relative intersect:animate-fade-in-scale-index intersect-once -top-16'
+  >
+    <div
+      class='xl:absolute inset-0 z-10 flex flex-col xl:flex-row justify-center h-max pointer-events-none xl:top-16'
+    >
+      {
+        colabData.map((item) => (
+          <a
+            href={item.href}
+            class='flex flex-col bg-primary text-background xl:min-h-[25vh] z-10 p-5 items-center border-1 border-accent pointer-events-auto w-full xl:max-w-lg'
+          >
+            <div class='flex flex-col gap-4 xl:gap-0 xl:justify-between items-center h-full'>
+              <h3 class='text-lg xl:text-3xl text-center sour-gummy-semibold '>
+                {item.title}
+              </h3>
+              <p class='text-sm xl:text-base text-center'>{item.desc}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <Image
+      src={P1}
+      alt={'Fotografo okolicznościowy Puchaczów i okolice'}
+      loading={'lazy'}
+      fetchpriority={'high'}
+      class={'rounded-2xl double-brand-clip scale-80'}
+      widths={[400, 600, 800, 1000, 1200, 1600, 2000]}
+      sizes='(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px'
+    />
+  </div>
+</section>
+
+<style>
+  .double-brand-clip {
+    clip-path: none; /* domyślnie brak efektu */
+  }
+
+  @media (min-width: 1280px) {
+    .double-brand-clip {
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    }
+  }
+</style>
