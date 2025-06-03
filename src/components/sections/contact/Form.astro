@@ -25,16 +25,14 @@ import { Icon } from 'astro-icon/components'
     </div>
     <div
       id='ellipse'
-      class='absolute w-full h-3/4 lg:h-3/4 top-1/4 lg:bottom-1/8 left-0 z-0 -rotate-225'
+      class='absolute w-full h-3/4 lg:h-3/4 top-1/4 hidden md:block lg:bottom-1/8 left-0 z-0 -rotate-225'
     >
     </div>
-    <div class='flex z-10 flex-col lg:flex-row justify-between'>
+    <div class='flex z-10 flex-col lg:flex-row justify-between gap-4 lg:gap-0'>
       <div class='flex flex-col gap-2 items-center justify-center'>
         <Icon name='lucide:mail' class='size-8 lg:size-16' />
-        <a
-          class='text-base font-semibold'
-          href='mailto:r.lis@puchaczow.lubelskie.pl'
-          >r.lis@puchaczow.lubelskie.pl</a
+        <a class='text-base font-semibold' href='mailto:photofox102@gmail.com'
+          >photofox102@gmail.com</a
         >
       </div>
       <div class='flex flex-col gap-2 items-center justify-center'>
@@ -43,11 +41,17 @@ import { Icon } from 'astro-icon/components'
           >+48 603 086 198</a
         >
       </div>
+      <div class='flex flex-col gap-2 items-center justify-center'>
+        <Icon name='lucide:map-pin' class='size-8 lg:size-16' />
+        <p class='text-base font-semibold text-center'>
+          Stara Wieś 59, 21-013 Puchaczów
+        </p>
+      </div>
     </div>
     <div class='flex w-full h-[1px] bg-background/80'></div>
 
     <iframe
-      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.15170098579!2d23.11429551297263!3d52.00411357181345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47219100f176c9bd%3A0x336c07b1c518e699!2sRobotnicza%2038%2C%2021-500%20Bia%C5%82a%20Podlaska!5e0!3m2!1spl!2spl!4v1748248977627!5m2!1spl!2spl'
+      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2494.480826859108!2d22.97592231294209!3d51.30227757164957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4723b23eb309d86d%3A0x5a37a52706f3cc73!2sStara%20Wie%C5%9B%2059%2C%2021-013%20Stara%20Wie%C5%9B!5e0!3m2!1spl!2spl!4v1748975369750!5m2!1spl!2spl'
       class='flex w-full h-full rounded-2xl z-10'
       style='border:0;'
       allowfullscreen=''
@@ -56,7 +60,7 @@ import { Icon } from 'astro-icon/components'
   </address>
   <form
     id='contact-form'
-    action=''
+    action='https://formspree.io/f/mpwrzgwo'
     method='POST'
     class='flex flex-col gap-6 bg-primary rounded-2xl p-8 w-full'
   >

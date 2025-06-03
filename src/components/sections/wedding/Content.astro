@@ -1,0 +1,114 @@
+---
+import { Picture } from 'astro:assets'
+import P1 from '@/assets/mlodzi.avif'
+---
+
+<section class='relative grid lg:grid-cols-2 px-spaced gap-8 py-8 xl:py-24'>
+  <div
+    class='lg:sticky top-32 h-fit order-last grid rounded-2xl'
+  >
+    <Picture
+      src={P1}
+      alt='Klimatyzacja chodząca w pomieszczeniu biurowym i kobieta używająca pilota od klimatyzacji.'
+      formats={['avif']}
+      widths={[400, 800, 1200]}
+      sizes={`
+      (max-width: 1280px) 400px,
+      (max-width: 1536px) 800px,
+      1200px
+    `}
+      class={'rounded-2xl '}
+      loading={'eager'}
+    />
+  </div>
+  <div
+    class='order-first prose-stone flex flex-col gap-16 max-w-3xl'
+  >
+    <article class="text-background">
+      <header>
+        <h2>
+          Fotografia ślubna Puchaczów - co zawiera usługa?
+        </h2>
+      </header>
+      <p>
+        <strong>Fotografia ślubna w Puchaczowie</strong> to wyjątkowa usługa, dzięki której uchwycicie najpiękniejsze momenty swojego wielkiego dnia w sposób naturalny i pełen emocji. W ofercie znajduje się reportaż z samej uroczystości – zarówno cywilnej, jak i kościelnej – a dla chętnych również dokumentacja przygotowań, czyli chwile pełne wzruszeń, emocji i detali, które często umykają w ferworze wydarzeń. Wszystkie zdjęcia są starannie selekcjonowane i poddawane profesjonalnej obróbce, dzięki czemu zyskują wyjątkowy charakter przy zachowaniu naturalnego wyglądu. Dodatkowo można zamówić romantyczną sesję plenerową w naturalnej scenerii – w lesie, nad wodą, na łące lub w innym ważnym dla Was miejscu. Taka <strong>sesja ślubna</strong> to doskonały sposób, by pokazać Waszą bliskość i stworzyć piękną, ponadczasową pamiątkę, do której będziecie wracać przez lata.
+      </p>
+      <div class='flex flex-col gap-5'>
+        <h3>Dlaczego fotograf ślubny to podstawa dobrego wesela?</h3>
+        <p>
+          Fotograf ślubny to jedna z najważniejszych osób towarzyszących Wam w dniu ślubu – nie tylko dokumentuje wydarzenia, ale zatrzymuje w kadrze emocje, gesty, spojrzenia i atmosferę, której nie da się odtworzyć. Dobry fotograf potrafi uchwycić momenty, których nawet nie zauważycie – ukradkowe łzy wzruszenia rodziców, spontaniczne śmiechy gości czy czułe spojrzenia między Wami. Dzięki niemu po latach będziecie mogli wrócić do tych chwil tak, jakby wydarzyły się wczoraj. Profesjonalne zdjęcia to coś więcej niż pamiątka – to opowieść o Waszym dniu, emocjach i ludziach, którzy byli wtedy blisko.
+        </p>
+      </div>
+    </article>
+    <article class="text-background">
+      <header>
+        <h2>
+          Fotografia ślubna Photofox – fotograf ślubny Puchaczów
+        </h2>
+      </header>
+      <p>
+        <strong>Fotografia ślubna</strong> to opowieść o Waszym dniu przedstawiona na zdjęciach. Jest pełna emocji, Waszych przeżyć, relacji między bliskimi. To historia, którą będą oglądać pokolenia. Czy zgodzicie się z nami, że powinna być pokazana w taki sposób, byście z dumą prezentowali ją swoim bliskim? Oglądając <strong>album ślubny</strong> chcemy byście czuli te emocje, które wtedy Wam towarzyszyły. Jeszcze tego nie wiecie, ale zdjęcia zachowają chwile, których z nadmiaru emocji nie będziecie pamiętać. Odtworzycie je dopiero po czasie. Dlaczego o tym wspominamy? Bo to, jak ta historia będzie opowiedziana, zaczyna się w momencie <strong>poszukiwań fotografa ślubnego.</strong> To bardzo ważne, byście wybrali go świadomie. Właśnie teraz rozstrzyga się jedna z ważniejszych ślubnych kwestii – komu powierzycie zadanie opowiedzenia Waszego dnia ślubu? Pozwólcie, że przywitamy Was na naszej stronie radami <strong>jak znaleźć fotografa ślubnego</strong>, który będzie towarzyszył Wam w dniu ślubu. 
+      </p>
+    </article>
+    <article class="text-background">
+      <header>
+        <h2>Fotografia ślubna - profesjonalne sesje Puchaczów i okolice</h2>
+      </header>
+      <p>
+        Sesje ślubne to niezwykle istotny element fotografii ślubnej – często są pierwszym momentem, gdy para młoda staje przed obiektywem w wyjątkowej roli. Jeśli zastanawiacie się nad wyborem sesji, warto zajrzeć do galerii i zobaczyć prawdziwe emocje uchwycone na zdjęciach. Podczas takich spotkań nie chodzi o sztuczne pozowanie czy zdjęcia jak z modowego katalogu – naszym celem jest pokazanie autentycznej bliskości i emocji, które naturalnie Was łączą. To nie sesja dla błysku fleszy, ale osobista opowieść o Waszej miłości – zapisana w kadrach. Szukamy Waszej wersji uczucia, nie narzucając schematów – i zawsze ją odnajdujemy. Potrzebne jest tylko zaufanie.
+      </p>
+      <h3>Jak wyglądają sesje ślubne z fotografem?</h3>
+      <p>Każda sesja jest indywidualnie dopasowana – wspólnie wybieramy miejsce i najlepszy czas na zdjęcia. Możecie zdecydować się na sesję narzeczeńską, ślubną, a także krótką sesję w dniu ślubu. Niekiedy wystarczy kilka minut o złotej godzinie i ciepło Waszego spojrzenia. Innym razem wyruszamy razem w plener – w góry, nad morze, do lasu, a nawet w centrum miasta. Każde miejsce może stać się pięknym tłem, jeśli tylko niesie dla Was znaczenie. Dla nas liczy się przede wszystkim to, by uchwycić prawdę o Was i stworzyć historię, do której będziecie wracać z emocjami.</p>
+    </article>
+  </div>
+</section>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    gap: 32px;
+    align-items: start;
+    padding: 32px;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-weight: 600; /* font-semibold */
+    font-family: "Sour Gummy", sans-serif;
+    color: white
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+    h3 {
+      font-family: "Sour Gummy", sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.1;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  h3 {
+    font-weight: 600; /* font-semibold */
+    color: white
+    font-size: 1.25rem;
+    line-height: 2rem;
+    
+    max-width: 48rem; /* max-w-3xl */
+  }
+
+  p {
+    font-size: 1rem;
+  }
+</style>
