@@ -1,0 +1,14 @@
+
+User-agent: *
+Disallow: /_astro/*
+Disallow: /api/*
+Disallow: /.astor/*
+Disallow: /.astro/*
+Disallow: /.git/*
+Disallow: /.venv/*
+Allow: /
+# Host
+Host: https://photofox.pl
+
+# Sitemaps
+Sitemap: https://photofox.pl/sitemap-0.xml

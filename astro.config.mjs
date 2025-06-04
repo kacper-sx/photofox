@@ -35,7 +35,8 @@ export default defineConfig({
         "server",
         'air-vent',
         "battery-charging",
-        "cctv"
+        "cctv",
+        "camera",
       ],
     },
   }), sitemap(), ]

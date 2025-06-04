@@ -1,0 +1,57 @@
+---
+import AppHeader from '@/components/AppHeader.astro'
+import AppFooter from '@/components/AppFooter.astro'
+import { getImage } from 'astro:assets'
+import myBackground from '@/assets/fotograf.avif'
+import { Icon } from 'astro-icon/components'
+import Breadcrumbs from '@/components/features/Breadcrumbs.astro'
+import Layout from '@/layouts/Layout.astro'
+
+const optimizedBackground = await getImage({
+  src: myBackground,
+  loading: 'eager',
+  format: 'avif',
+})
+---
+
+<Layout
+  title='404'
+  description='404'
+  cannonical='https://photofox.pl/404'
+  keywords='404'
+>
+  <section
+    class='flex relative w-full bg-cover min-h-screen items-center justify-center'
+    style={`background-image: url(${optimizedBackground.src}); background-position: center 90%;`}
+  >
+    <div class='absolute inset-0 bg-black/30'></div>
+    <div class='flex flex-col items-center p-4 backdrop-blur-sm xl:mt-16 gap-4'>
+      <p
+        class='sour-gummy-semibold text-4xl xl:text-[96px] tracking-wide text-center text-primary'
+      >
+        Strona nie istnieje
+      </p>
+      <p class='text-lg lg:text-xl font-medium max-w-5xl text-center'>
+        Niestety, strona której szukasz niestety nie istnieje. Jesli szukasz
+        doświadcznonego fotografa to jesteś w dobrym miejsc. Wróć na stronę
+        główną.
+      </p>
+      <div
+        class='flex mt-6 flex-col md:flex-row gap-4 text-xl xl:text-2xl w-full justify-center items-center sour-gummy-semibold'
+      >
+        <a
+          href='/'
+          class='flex bg-primary rounded-full items-center hover:scale-105 hover:shadow-xl duration-300 transition-all text-accent text-base w-max xl:text-2xl py-4 px-8'
+        >
+          Strona główna
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .double-brand-clip {
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+  </style>
+</Layout>

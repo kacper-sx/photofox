@@ -1,0 +1,108 @@
+---
+import { Picture } from 'astro:assets'
+import P1 from '@/assets/mlodzi.avif'
+---
+
+<section class='relative grid lg:grid-cols-2 px-spaced gap-8 xl:gap-16 py-8 xl:py-24'>
+  <div
+    class='lg:sticky top-32 w-full h-fit grid rounded-2xl'
+  >
+    <Picture
+      src={P1}
+      alt='Klimatyzacja chodząca w pomieszczeniu biurowym i kobieta używająca pilota od klimatyzacji.'
+      formats={['avif']}
+      widths={[400, 800, 1200]}
+      sizes={`
+      (max-width: 1280px) 400px,
+      (max-width: 1536px) 800px,
+      1200px
+    `}
+      class={'rounded-2xl '}
+      loading={'eager'}
+    />
+  </div>
+  <div
+    class=' flex flex-col gap-16 w-full'
+  >
+    <article class="text-background">
+      <header>
+        <h2>
+          Fotograf Puchaczów - imprezy okoliczościowe
+        </h2>
+      </header>
+      <p>
+        Jeśli szukasz osoby, która z pasją i zaangażowaniem uwieczni ważne momenty z Twojego życia – dobrze trafiłeś. Jako fotograf w Puchaczowie oferuję profesjonalną obsługę imprez okolicznościowych: chrztów, komunii, urodzin, rocznic czy rodzinnych spotkań. Zależy mi, aby każda fotografia oddawała autentyczne emocje i klimat wydarzenia. Działam dyskretnie, dbając o komfort uczestników i naturalność ujęć. Dzięki doświadczeniu i indywidualnemu podejściu tworzę zdjęcia, do których z przyjemnością się wraca przez lata.
+      </p>
+     
+    </article>
+    <article class="text-background">
+      <header>
+        <h2>
+          Photofox - doświadcznony fotograf okolicznościowy z Puchaczowa
+        </h2>
+      </header>
+      <p>
+        Jako fotograf pomagam uwiecznić momenty, które tworzą niesamowitą historię, pełną magii uczuć oraz niezapomnianych chwil. W pracy z Wami zawsze staram się być niezauważalny, ponieważ podczas sesji, czy w dniu Waszego święta to Wy jesteście najważniejsi. Według mnie rozmowa z ludźmi bardzo dużo daje, dlatego już na etapie podpisywania umowy staram się z Wami spotkać, abyśmy w tym szczególnym dniu zaczynali jak starzy dobrzy znajomi. Bardzo to pomaga ponieważ buduje relacje dużo wcześniej, dzięki czemu otwieracie się przede mną oraz nawzajem sobie pomagamy, co tylko potęguje efekt końcowy na Waszych fotografiach. 
+      </p>
+    </article>
+    <article class="text-background">
+      <header>
+        <h2>Profesjonalne sesje zdjęciowe w Puchaczowie - moc fotografii</h2>
+      </header>
+      <p>
+        Planujesz ślub z weselem, komunię, chrzciny, a może organizujesz inną uroczystość prywatną bądź firmową? Nie zapomnij o wynajęciu fotografa na tę okoliczność! Fotografie to jedne z tych pamiątek, do których wracamy najczęściej, aby powspominać i na nowo poczuć emocje, które towarzyszyły nam w owym szczególnym dniu. Niepowtarzalne kadry przywołują najcenniejsze wspomnienia. Sesje fotograficzne z uroczystości pozwalają dzielić się wspomnieniami ze wszystkimi uczestnikami, chociażby za pomocą odbitek, wersji cyfrowych czy też wspólnego oglądania albumów rodzinnych. Wyjątkowe zdjęcia można powiesić na ścianie bądź postawić na komodzie w sypialni, by każdego dnia pamiętać radość wspólnych chwil.
+      </p>
+      
+    </article>
+  </div>
+</section>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    gap: 32px;
+    align-items: start;
+    padding: 32px;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-weight: 600; /* font-semibold */
+    font-family: "Sour Gummy", sans-serif;
+    color: white
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+    h3 {
+      font-family: "Sour Gummy", sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.1;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  h3 {
+    font-weight: 600; /* font-semibold */
+    color: white
+    font-size: 1.25rem;
+    line-height: 2rem;
+    
+    max-width: 48rem; /* max-w-3xl */
+  }
+
+  p {
+    font-size: 1rem;
+  }
+</style>

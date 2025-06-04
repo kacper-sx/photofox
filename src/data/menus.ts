@@ -4,7 +4,7 @@ export const menuMain = [
 		url: "/fotografia-slubna",
 	},
   {
-		name: "Fotografia chrzcielna",
+		name: "Fotografia chrztu",
 		url: "/fotografia-chrzcielna",
 	},
 	{

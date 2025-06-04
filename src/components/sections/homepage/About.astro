@@ -1,0 +1,98 @@
+---
+import background from '@/assets/background.svg'
+import P1 from '@/assets/aparat.avif'
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+---
+
+<section
+  id='about'
+  class='flex scroll-mt-[96px] flex-col xl:flex-row gap-8 xl:gap-16 w-full px-spaced py-8 xl:py-16 items-center justify-center'
+>
+  <div
+    class='flex relative intersect:animate-fade-in-scale-index intersect-once'
+  >
+    <Image
+      src={P1}
+      alt={'Spotkanie prawnika z klientem w kancelarii adwokackiej.'}
+      loading={'lazy'}
+      fetchpriority={'high'}
+      class={'rounded-2xl xl:max-w-4xl double-brand-clip'}
+      widths={[400, 600, 800, 1000, 1200, 1600, 2000]}
+      sizes='(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px'
+    />
+  </div>
+  <div
+    class='flex flex-col rounded-2xl bg-white/5 p-8 text-primary relative gap-5 xl:gap-8 justify-center items-center intersect:animate-fade-in-scale-index intersect-once'
+  >
+    <Icon
+      name='lucide:camera'
+      class='absolute top-16 right-8 size-36 xl:size-80 text-primary/5 -rotate-4'
+    />
+    <Icon
+      name='lucide:camera'
+      class='absolute bottom-16 left-24 size-32 xl:size-64 text-primary/5 rotate-4'
+    />
+    <div class='flex flex-row gap-2 xl:gap-4 items-center'>
+      <div class='h-1 w-16 xl:w-20 bg-primary rounded-full'></div>
+      <h2
+        class='sour-gummy-semibold text-2xl xl:text-3xl text-center max-w-2xl'
+      >
+        Dlaczego fotograf okolicznościowy?
+      </h2>
+      <div class='h-1 w-16 xl:w-20 bg-primary rounded-full'></div>
+    </div>
+    <p class='text-sm xl:text-base max-w-3xl text-center'>
+      Nazywam się Robert Lis a to jest strona poświęcona mojej pasji jaką jest <strong
+        >fotografia okolicznościowa.</strong
+      > Nie jest to mój główny zawód lecz wieloletnia zajawka, dzięki której realizuje
+      swoje artystyczne zapędy. Mieszkam w Starej Wsi w okolicy Puchaczowa, jednak
+      swoją <strong>ofertę fotograficzną</strong> kieruję do całej społeczności powiatu
+      Łęczyńskiego i województwa Lubelskiego.
+    </p>
+    <p class='text-sm xl:text-base max-w-3xl text-center'>
+      Zajmuję się głównie <strong>fotografią rodzinnych uroczystości</strong> – chrztów,
+      komunii, ślubów, a także sesji rodzinnych i portretowych. Każde zlecenie traktuję
+      indywidualnie, z pełnym zaangażowaniem i wrażliwością na emocje, które towarzyszą
+      wyjątkowym momentom. Zależy mi na tym, by zdjęcia, które tworzę, były nie tylko
+      technicznie dopracowane, ale przede wszystkim pełne autentyczności i ciepła.
+    </p>
+    <p class='text-sm xl:text-base max-w-3xl text-center'>
+      Jako fotograf okolicznościowy staram się uchwycić to, co ulotne –
+      spojrzenia, gesty, atmosferę danego dnia. Niezależnie od tego, czy
+      fotografuję kameralny chrzest, rodzinną sesję plenerową czy większą
+      uroczystość, moim celem jest stworzenie naturalnej, pięknej i spójnej
+      opowieści zapisanej w kadrach. <strong>Fotografia okolicznościowa</strong>
+      to dla mnie nie tylko zdjęcia – to emocje, wspomnienia i historie, które z
+      czasem nabierają jeszcze większej wartości.
+    </p>
+
+    <div class='flex flex-row gap-2 xl:gap-4 items-center'>
+      <div class='h-1 w-12 xl:w-24 bg-primary rounded-full'></div>
+      <div class='text-2xl xl:text-4xl text-center max-w-2xl'>
+        <a
+          href='/contact'
+          class='bg-primary text-background hover:scale-105 hover:shadow-xl shadow-background duration-300 transition-all rounded-full inline-flex gap-2 place-self-center items-center text-base xl:text-2xl sour-gummy-semibold px-6 py-3 !text-background'
+        >
+          <Icon
+            name='lucide:handshake'
+            class='size-6 text-background'
+          />Zapraszam na sesję
+        </a>
+      </div>
+      <div class='h-1 w-12 xl:w-24 bg-primary rounded-full'></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .double-brand-clip {
+    clip-path: none; /* domyślnie brak efektu */
+  }
+
+  @media (min-width: 1280px) {
+    .double-brand-clip {
+      clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    }
+  }
+</style>
