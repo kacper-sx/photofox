@@ -43,8 +43,10 @@ import { menuMain } from '@/data/menus'
   <div class='flex flex-col py-4 flex-wrap gap-4 lg:grid lg:grid-cols-3 z-10'>
     <p>Copyright &copy; {new Date().getFullYear()} Photofox Robert Lis</p>
 
-    <a class='place-self-center' href='/polityka'>Polityka prywatnosci</a>
-
+    <div class='flex flex-col gap-3 lg:flex-row text-sm place-self-center'>
+      <a href='/polityka'>Polityka prywatnosci</a>
+      <a href='/polityka'>Polityka cookie</a>
+    </div>
     <p class='place-self-end'>
       Realizacja -
       <a

@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Landing from '@/components/sections/gallery/Landing.astro'
+
+import { ImageGallery } from '@/components/features/image-gallery'
+import type { GetImageResult } from 'astro'
+import { getImage } from 'astro:assets'
+
+const recordImages = import.meta.glob(
+  '/src/assets/galeria/*.{jpg,png,webp,avif,JPG}',
+  { eager: true, import: 'default' },
+)
+
+// Konwersja wartości na tablicę ścieżek do obrazów
+const images: string[] = Object.values(recordImages) as string[]
+
+const imagePromises = images.map(async (src) => {
+  if (!src) {
+    console.error('🚨 Błąd: src jest undefined!')
+    return null
+  }
+
+  try {
+    return await getImage({
+      src,
+      quality: 90,
+      widths: [400, 600, 800, 1200, 1600, 2000],
+      format: 'webp',
+    })
+  } catch (error) {
+    console.error('🚨 Błąd w getImage():', error)
+    return null
+  }
+})
+
+// Usunięcie `null` wartości
+const imageProps: GetImageResult[] = (await Promise.all(imagePromises)).filter(
+  (img): img is GetImageResult => img !== null,
+)
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout
+  title='Galeria zdjęć | Portfolio fotograficzne Photofox '
+  description='Zapraszam do zapoznania się z efektami mojej pracy z aparatem podczas imprez okolicznościowych. Galeria zdjęć z wydarzeń rodzinnych.'
+  cannonical='https://photofox.pl/galeria/'
+  keywords='Galeria'
+>
+  <Landing />
+  <div
+    class='grid grid-cols-2 gap-4 lg:gap-8 lg:grid-cols-3 xl:grid-cols-4 w-full px-spaced py-8 xl:py-16'
+  >
+    <ImageGallery client:idle imageProps={imageProps} />
+  </div>
+</Layout>

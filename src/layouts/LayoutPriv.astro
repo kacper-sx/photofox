@@ -1,0 +1,53 @@
+---
+import '@/styles/global.css'
+import AppHeader from '@/components/AppHeader.astro'
+
+import AppFooter from '@/components/AppFooter.astro'
+
+export interface Props {
+  title: string
+  description: string
+  cannonical?: string
+  keywords: string
+}
+
+const { title, description, cannonical, keywords } = Astro.props as Props
+---
+
+<!doctype html>
+<html lang='pl'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/x-icon' href='/favicon.svg' />
+
+    <meta name='robots' content='noindex, nofollow' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='canonical' href={cannonical} />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <meta name='keywords' content={keywords} />
+
+    <script
+      defer
+      src='https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js'
+    ></script>
+  </head>
+  <body class='overflow-x-hidden'>
+    <AppHeader />
+
+    <slot />
+
+    <AppFooter />
+  </body>
+
+  <script>
+    import Lenis from 'lenis'
+    declare global {
+      interface Window {
+        lenis: Lenis
+      }
+    }
+    window.lenis = new Lenis({ autoRaf: true })
+  </script>
+</html>

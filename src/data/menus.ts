@@ -12,6 +12,10 @@ export const menuMain = [
 		url: "/fotografia-komunijna",
 	},
   {
+		name: "Galeria",
+		url: "/galeria",
+	},
+  {
 		name: "Kontakt",
 		url: "/kontakt",
 	},

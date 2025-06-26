@@ -7,6 +7,10 @@ import sitemap from '@astrojs/sitemap';
 
 
 
+import react from "@astrojs/react";
+
+
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://photofox.pl",
@@ -39,5 +43,5 @@ export default defineConfig({
         "camera",
       ],
     },
-  }), sitemap(), ]
+  }), sitemap(), react()]
 });

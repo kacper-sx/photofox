@@ -1,0 +1,48 @@
+---
+import { getImage } from 'astro:assets'
+import myBackground from '@/assets/galeria.avif'
+import Breadcrumbs from '@/components/features/Breadcrumbs.astro'
+
+const optimizedBackground = await getImage({
+  src: myBackground,
+  loading: 'eager',
+  format: 'avif',
+})
+---
+
+<section
+  class='grid md:grid-cols-2 h-[dvh] items-center md:items-end relative bg-top bg-cover min-h-[30vh] md:min-h-[50vh] max-h-[50vh] overflow-hidden'
+  style={`background-image: url(${optimizedBackground.src});`}
+>
+  <div class='absolute inset-0 bg-black/70'></div>
+
+  <div
+    class='flex flex-col gap-4 md:gap-8 w-full py-8 xl:py-16 z-20 px-spaced text-primary'
+  >
+    <Breadcrumbs
+      breadcrumbs={[
+        { href: '/', children: 'Photofox' },
+        { href: '/galeria', children: 'Galeria' },
+      ]}
+    />
+    <h1 class='font-bold text-3xl md:text-4xl xl:text-6xl'>
+      Galeria zdjęć Photofox
+    </h1>
+  </div>
+  <div
+    class='bg-primary hidden md:block double-brand-clip w-full md:max-w-lg h-full z-20 place-self-end'
+  >
+  </div>
+</section>
+
+<style>
+  .double-brand-clip {
+    clip-path: none; /* domyślnie brak efektu */
+  }
+
+  @media (min-width: 768px) {
+    .double-brand-clip {
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 59% 100%);
+    }
+  }
+</style>
