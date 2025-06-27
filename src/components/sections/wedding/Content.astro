@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets'
-import P1 from '@/assets/mlodzi.avif'
+import P1 from '@/assets/fotografia-slubna.avif'
 ---
 
 <section class='relative grid lg:grid-cols-2 px-spaced gap-8 py-8 xl:py-24'>
@@ -9,7 +9,7 @@ import P1 from '@/assets/mlodzi.avif'
   >
     <Picture
       src={P1}
-      alt='Klimatyzacja chodząca w pomieszczeniu biurowym i kobieta używająca pilota od klimatyzacji.'
+      alt='Zdjęcie ślubne zrobione podczas zabawy weselnej.'
       formats={['avif']}
       widths={[400, 800, 1200]}
       sizes={`
@@ -18,7 +18,7 @@ import P1 from '@/assets/mlodzi.avif'
       1200px
     `}
       class={'rounded-2xl '}
-      loading={'eager'}
+      loading={'lazy'}
     />
   </div>
   <div
